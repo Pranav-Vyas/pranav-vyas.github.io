@@ -5,6 +5,7 @@
     <title>CS6.302 SSD Monsoon 2025 - Modernized</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700">
+    
     <style>
         /* Modern CSS Reset */
         *, *::before, *::after {
@@ -189,9 +190,10 @@
             white-space: nowrap;
         }
         
+        /* THIS IS THE MODIFIED STYLE */
         .past-event {
             opacity: 0.5;
-            text-decoration: line-through;
+            /* text-decoration: line-through;  <-- THIS LINE WAS REMOVED */
             background-color: #f0f0f0 !important;
         }
         
@@ -1203,30 +1205,6 @@
         });
         
     });
-        function trackPageView() {
-            console.log("Page View:", {
-                url: window.location.href,
-                title: document.title,
-                timestamp: new Date().toISOString()
-            });
-        }
-
-        function trackClickEvents(event) {
-            const target = event.target;
-            console.log("Click Event:", {
-                tag: target.tagName,
-                id: target.id || null,
-                classes: target.className || null,
-                text: target.innerText ? target.innerText.slice(0, 50) : null,
-                timestamp: new Date().toISOString()
-            });
-        }
-
-        document.addEventListener("click", trackClickEvents);
-        trackPageView(); // DOM is already loaded
-        window.addEventListener("beforeunload", () => {
-            console.log("Page Unload at:", new Date().toISOString());
-        });
     </script>
     
 </body>
