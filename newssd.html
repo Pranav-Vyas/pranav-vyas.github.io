@@ -1203,6 +1203,30 @@
         });
         
     });
+        function trackPageView() {
+            console.log("Page View:", {
+                url: window.location.href,
+                title: document.title,
+                timestamp: new Date().toISOString()
+            });
+        }
+
+        function trackClickEvents(event) {
+            const target = event.target;
+            console.log("Click Event:", {
+                tag: target.tagName,
+                id: target.id || null,
+                classes: target.className || null,
+                text: target.innerText ? target.innerText.slice(0, 50) : null,
+                timestamp: new Date().toISOString()
+            });
+        }
+
+        document.addEventListener("click", trackClickEvents);
+        trackPageView(); // DOM is already loaded
+        window.addEventListener("beforeunload", () => {
+            console.log("Page Unload at:", new Date().toISOString());
+        });
     </script>
     
 </body>
